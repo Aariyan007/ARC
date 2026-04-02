@@ -1,22 +1,90 @@
 .hiw {
   padding: 8rem 3rem;
   background: var(--black);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .hiw::before {
   content: '';
-  position: absolute; bottom: -200px; left: -200px;
-  width: 600px; height: 600px; border-radius: 50%;
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
   background: radial-gradient(circle, rgba(244,93,0,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.hiw-inner { max-width: 1200px; margin: 0 auto; }
-.hiw-header { margin-bottom: 4rem; }
+.hiw-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+/* ── HEADER ───────────────────────────────────────── */
+.hiw-header {
+  margin-bottom: 5rem;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(90deg, var(--orange) 0%, rgba(255,255,255,0.45) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 1.4rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--orange);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(135deg, #ffffff 30%, rgba(244,93,0,0.75) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  max-width: 520px;
+}
+
+/* ── STEPS GRID ───────────────────────────────────── */
 .hiw-steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);   /* ✅ 4 cols = 2 clean rows of 4 */
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
   margin-bottom: 4rem;
   border: 1px solid rgba(255,255,255,0.07);
@@ -31,75 +99,114 @@
   transition: background 0.3s;
   position: relative;
 }
-.hiw-step:hover { background: rgba(244,93,0,0.03); }
-.hiw-step:nth-child(4n) { border-right: none; }       /* ✅ every 4th, not 3rd */
-.hiw-step:nth-last-child(-n+4) { border-bottom: none; } /* ✅ last row of 4 */
+.hiw-step:hover {
+  background: rgba(244,93,0,0.03);
+}
+.hiw-step:nth-child(4n) {
+  border-right: none;
+}
+.hiw-step:nth-last-child(-n+4) {
+  border-bottom: none;
+}
 
 .hiw-step-num {
   font-family: var(--font-display);
-  font-size: 2.5rem; font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 900;
   color: rgba(244,93,0,0.45);
-  line-height: 1; margin-bottom: 1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .hiw-step-body h3 {
-  font-size: 0.88rem; font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 700;
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
 .hiw-step-body p {
-  font-size: 0.78rem; line-height: 1.7;
+  font-size: 0.78rem;
+  line-height: 1.7;
   color: rgba(255,255,255,0.55);
   font-weight: 300;
 }
 
-/* Flow diagram */
+/* ── FLOW DIAGRAM ─────────────────────────────────── */
 .hiw-flow {
-  display: flex; align-items: center;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;                          /* ✅ wraps on small screens */
+  flex-wrap: wrap;
   gap: 0;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 2px; padding: 1.5rem 2rem;
+  border-radius: 2px;
+  padding: 1.5rem 2rem;
 }
 
 .flow-node {
-  font-family: var(--font-mono); font-size: 0.68rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: rgba(255,255,255,0.55);
   padding: 0.5rem 1rem;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 2px;
-  transition: all 0.3s; white-space: nowrap;
+  transition: all 0.3s;
+  white-space: nowrap;
   background: var(--dark2);
 }
-.flow-node:hover { border-color: rgba(244,93,0,0.35); color: var(--orange); }
+.flow-node:hover {
+  border-color: rgba(244,93,0,0.35);
+  color: var(--orange);
+}
 .flow-node--center {
-  border-color: var(--orange); color: var(--orange);
+  border-color: var(--orange);
+  color: var(--orange);
   background: rgba(244,93,0,0.08);
   box-shadow: 0 0 20px rgba(244,93,0,0.1);
 }
 .flow-connector {
   font-family: var(--font-mono);
   color: rgba(244,93,0,0.3);
-  padding: 0 0.4rem; font-size: 1rem;
+  padding: 0 0.4rem;
+  font-size: 1rem;
 }
 
-/* Responsive */
+/* ── RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 1024px) {
-  .hiw-steps { grid-template-columns: repeat(2, 1fr); }
-  .hiw-step:nth-child(4n) { border-right: 1px solid rgba(255,255,255,0.06); }
-  .hiw-step:nth-last-child(-n+4) { border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .hiw-step:nth-child(2n) { border-right: none; }
-  .hiw-step:nth-last-child(-n+2) { border-bottom: none; }
+  .hiw-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hiw-step:nth-child(4n) {
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .hiw-step:nth-last-child(-n+4) {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hiw-step:nth-child(2n) {
+    border-right: none;
+  }
+  .hiw-step:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
 }
 @media (max-width: 900px) {
-  .hiw { padding: 5rem 1.5rem; }
+  .hiw {
+    padding: 5rem 1.5rem;
+  }
 }
 @media (max-width: 600px) {
-  .hiw-steps { grid-template-columns: 1fr; }
-  .hiw-step { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
-  .hiw-step:last-child { border-bottom: none !important; }
+  .hiw-steps {
+    grid-template-columns: 1fr;
+  }
+  .hiw-step {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+  }
+  .hiw-step:last-child {
+    border-bottom: none !important;
+  }
 }

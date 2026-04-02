@@ -13,12 +13,37 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="footer-links">
-        {['Features', 'How It Works', 'Tech Stack', 'About', 'Contact'].map(l => (
-          <a key={l} href={`#${l.toLowerCase().replace(/\s+/g, '-')}`}>{l}</a>
-        ))}
-      </div>
+<div className="footer-links">
+  <a
+    href="https://instagram.com"
+    className="footer-social"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+    </svg>
+  </a>
 
+  <a
+    href="https://linkedin.com"
+    className="footer-social"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="3"/>
+      <line x1="8" y1="11" x2="8" y2="16"/>
+      <line x1="8" y1="8" x2="8" y2="8.5"/>
+      <line x1="12" y1="16" x2="12" y2="11"/>
+      <path d="M12 13.5a2.5 2.5 0 0 1 5 0V16"/>
+    </svg>
+  </a>
+</div>
       <div className="footer-contact">
         <a href="mailto:arconwrist@gmail.com" className="footer-email">arconwrist@gmail.com</a>
       </div>
