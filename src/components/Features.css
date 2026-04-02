@@ -1,0 +1,140 @@
+.features {
+  padding: 7rem 4rem;
+  background: var(--dark);
+}
+
+.features-header {
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.feat-card {
+  position: relative;
+  background: var(--dark);
+  padding: 2.5rem 2rem;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.feat-card:hover {
+  background: var(--dark2);
+}
+
+.feat-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  transition: width 0.4s ease;
+}
+
+.feat-card:hover::before {
+  width: 100%;
+}
+
+.feat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.feat-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+}
+
+.feat-icon {
+  font-size: 1.6rem;
+  filter: grayscale(0.3);
+}
+
+.feat-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.feat-desc {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.feat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: var(--orange-dim);
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(244,93,0,0.2);
+}
+
+/* Corner brackets */
+.feat-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.feat-corner.tl {
+  top: 8px;
+  left: 8px;
+  border-top: 1px solid rgba(244,93,0,0.3);
+  border-left: 1px solid rgba(244,93,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feat-corner.br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 1px solid rgba(244,93,0,0.3);
+  border-right: 1px solid rgba(244,93,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feat-card:hover .feat-corner {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .features {
+    padding: 5rem 1.5rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

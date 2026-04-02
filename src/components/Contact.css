@@ -1,0 +1,77 @@
+.contact { padding: 8rem 3rem; background: var(--black); }
+
+.contact-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center;
+}
+
+.contact-line {
+  width: 48px; height: 2px;
+  background: var(--orange); margin: 1.75rem 0;
+  box-shadow: 0 0 12px rgba(244,93,0,0.5);
+}
+
+.contact-desc {
+  font-size: 0.95rem; line-height: 1.85;
+  color: rgba(255,255,255,0.45); font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.contact-email-link {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--orange);
+  border-bottom: 1px solid rgba(244,93,0,0.3);
+  padding-bottom: 3px;
+  transition: all 0.2s;
+}
+.contact-email-link:hover { border-color: var(--orange); opacity: 0.8; }
+
+.contact-card {
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px; padding: 3rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s;
+}
+.contact-card:hover { border-color: rgba(244,93,0,0.2); }
+.contact-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-light), transparent);
+}
+
+.cc-eyebrow {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 1rem;
+}
+.contact-card h3 {
+  font-size: 1.4rem; font-weight: 700;
+  letter-spacing: -0.02em; margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.contact-card p {
+  font-size: 0.88rem; line-height: 1.75;
+  color: rgba(255,255,255,0.4); font-weight: 300; margin-bottom: 2rem;
+}
+
+.cc-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; font-weight: 600;
+  color: white; background: var(--orange);
+  padding: 0.8rem 1.75rem; border-radius: 100px;
+  transition: all 0.3s;
+}
+.cc-btn:hover {
+  background: var(--orange-light); transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(244,93,0,0.35);
+}
+.cc-btn svg { transition: transform 0.3s; }
+.cc-btn:hover svg { transform: translateX(4px); }
+
+@media (max-width: 900px) {
+  .contact { padding: 5rem 1.5rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+}

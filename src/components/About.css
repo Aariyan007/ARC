@@ -1,0 +1,85 @@
+.about { padding: 8rem 3rem; background: var(--black); }
+.about-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
+  gap: 6rem; align-items: center;
+}
+
+.about-line {
+  width: 48px; height: 2px; background: var(--orange);
+  box-shadow: 0 0 12px rgba(244,93,0,0.5);
+  margin: 1.75rem 0;
+}
+
+.about-text {
+  font-size: 0.95rem; line-height: 1.85;
+  color: rgba(255,255,255,0.5); font-weight: 300;
+  margin-bottom: 1rem;
+}
+.about-text em { font-style: italic; color: rgba(255,255,255,0.8); }
+
+.about-stats {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem; margin-top: 2.5rem;
+  padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.as-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.as-val {
+  font-family: var(--font-display); font-weight: 900;
+  font-size: 2rem; color: var(--orange);
+  letter-spacing: -0.02em;
+}
+.as-label {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Right */
+.about-right { display: flex; flex-direction: column; gap: 2rem; }
+
+.about-quote-card {
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid var(--orange);
+  padding: 2.5rem;
+  border-radius: 2px;
+  position: relative;
+}
+.aq-mark {
+  font-family: var(--font-serif); font-size: 5rem;
+  color: var(--orange); opacity: 0.3;
+  line-height: 0.7; margin-bottom: 1rem;
+}
+.aq-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem; line-height: 1.7;
+  color: rgba(255,255,255,0.75); font-weight: 300;
+  font-style: italic; margin-bottom: 1.5rem;
+}
+.aq-line { width: 32px; height: 1px; background: var(--orange); margin-bottom: 0.75rem; }
+.aq-attr {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  letter-spacing: 0.15em; color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+.about-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.about-pill {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.45rem 1rem; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+  transition: all 0.2s; cursor: default;
+}
+.about-pill:hover { border-color: var(--orange); color: var(--orange); }
+
+@media (max-width: 900px) {
+  .about { padding: 5rem 1.5rem; }
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-stats { grid-template-columns: repeat(4,1fr); }
+}
+@media (max-width: 500px) {
+  .about-stats { grid-template-columns: repeat(2,1fr); }
+}
