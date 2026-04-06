@@ -3,7 +3,7 @@ import './Team.css'
 import Aariyan from '../assets/Aariyan.jpeg'
 import Jithin from '../assets/Jithin.jpeg'
 import Laasya from '../assets/Laasya.jpeg'
-import Shivani from '../assets/shivani.jpeg'
+import Shivani from '../assets/Shivani.jpeg'
 
 const members = [
   { name: 'S.Aariyan', role: 'FOUNDER', bio: 'Life is never ending constant,ascend towards perfection.', initials: 'M1', photo: Aariyan },
