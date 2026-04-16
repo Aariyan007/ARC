@@ -1,1 +1,10 @@
 .app { min-height: 100vh; background: var(--black); }
+/* 🔥 FORCE VISIBILITY FIX */
+.section,
+.card,
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 1 !important;
+  transform: none !important;
+}
